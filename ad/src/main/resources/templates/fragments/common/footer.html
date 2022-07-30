@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<th:block th:fragment="footerFragment">
+		<!--begin::Footer-->
+		<div id="kt_app_footer" class="app-footer">
+			<!--begin::Footer container-->
+			<div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
+				<!--begin::Copyright-->
+				<div class="text-dark order-2 order-md-1">
+					<span class="text-muted fw-bold me-1">2022©</span>
+					<a href="javascript:void(0);" target="_blank" class="text-gray-800 text-hover-primary">DreammonsterKr</a>
+				</div>
+				<!--end::Copyright-->
+				<!--begin::Menu-->
+				<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+					<li class="menu-item">
+						<a href="javascript:void(0);" target="_blank" class="menu-link px-2">제휴</a>
+					</li>
+					<li class="menu-item">
+						<a href="javascript:void(0);" target="_blank" class="menu-link px-2">문의</a>
+					</li>
+				</ul>
+				<!--end::Menu-->
+			</div>
+			<!--end::Footer container-->
+		</div>
+		<!--end::Footer-->
+		
+		<!-- script -->
+	    <script type="text/javascript">
+	    	if (typeof jQuery == 'undefined') {
+	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
+	      	}
+	      		    
+	    	/* active link url */
+			const url = window.location.pathname;	   		
+	   		
+	   		$('.menu-link').each(function () {
+	   	   		var currUrl = $(this).attr('href');
+	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
+	   	   	});
+	   		
+	   		/* top title description */
+	   		switch (url) {
+		    case '/main' :
+		      	$('#topTitle').text('홈');
+		      	$('#topDescription').text('광고 솔루션');
+		      	break;
+		    default :
+		      break;
+		  	}
+	   		
+	    </script>
+		
+	</th:block>
+</html>
