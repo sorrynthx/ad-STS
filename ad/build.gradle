@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.dream'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.4-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
@@ -45,4 +45,16 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+
+ext.profile = (!project.hasProperty('profile') || !profile) ? 'dev' : profile
+
+sourceSets{
+    main{
+        resources {
+            srcDirs "src/main/resources/resources-${profile}"
+            exclude "resources-*"
+        }
+    }
 }

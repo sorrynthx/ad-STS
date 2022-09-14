@@ -8,7 +8,12 @@ public class IndexController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "html/welcome";
+		return "html/index";
+	}
+	
+	@GetMapping("/welcome/1")
+	public String welcome1() {
+		return "html/welcome1";
 	}
 	
 	@GetMapping("/main")
