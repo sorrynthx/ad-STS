@@ -5,8 +5,14 @@ plugins {
 }
 
 group = 'com.dream'
-version = '0.0.4-SNAPSHOT'
+version = '0.0.5-SNAPSHOT'
 sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
 
 repositories {
 	mavenCentral()
@@ -15,6 +21,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
@@ -32,29 +40,19 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	
-	// spring security (social login dependency)
-	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-	
 	// spring session jdbc
   	implementation 'org.springframework.session:spring-session-jdbc'
   	
   	// mysql
   	implementation 'mysql:mysql-connector-java'
 	
+	// https://mvnrepository.com/artifact/commons-io/commons-io
+	implementation 'commons-io:commons-io:2.11.0'
+	
+	// thymeleaf-layout-dialect
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-
-ext.profile = (!project.hasProperty('profile') || !profile) ? 'dev' : profile
-
-sourceSets{
-    main{
-        resources {
-            srcDirs "src/main/resources/resources-${profile}"
-            exclude "resources-*"
-        }
-    }
 }

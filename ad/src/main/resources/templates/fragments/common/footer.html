@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-	<th:block th:fragment="footerFragment">
+	<th:block th:fragment="footer">
 		<!--begin::Footer-->
 		<div id="kt_app_footer" class="app-footer">
 			<!--begin::Footer container-->
@@ -28,28 +28,15 @@
 		
 		<!-- script -->
 	    <script type="text/javascript">
-	    	if (typeof jQuery == 'undefined') {
-	        	alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
-	      	}
+	    	if (typeof jQuery == 'undefined') alert('네트워크가 불안정합니다. 나중에 다시 시도해주세요.');
 	      		    
 	    	/* active link url */
 			const url = window.location.pathname;	   		
 	   		
 	   		$('.menu-link').each(function () {
 	   	   		var currUrl = $(this).attr('href');
-	   	   		if (url.indexOf(currUrl) != -1) $(this).addClass('active');
+	   	   		if (url == currUrl) $(this).addClass('active');
 	   	   	});
-	   		
-	   		/* top title description */
-	   		switch (url) {
-		    case '/main' :
-		      	$('#topTitle').text('홈');
-		      	$('#topDescription').text('광고 솔루션');
-		      	break;
-		    default :
-		      break;
-		  	}
-	   		
 	    </script>
 		
 	</th:block>

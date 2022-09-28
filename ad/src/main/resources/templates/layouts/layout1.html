@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" 
+		xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<!-- HEAD -->
+    <th:block th:replace="fragments/common/head :: head"></th:block>
+</head>		
+
+<!--begin::Body-->
+<body id="kt_app_body" data-kt-app-layout="light-sidebar" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" class="app-default">
+	
+	<!--begin::Root -->
+	<div id="kt_app_root" class="d-flex flex-column flex-root">
+		
+		<div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+			<!-- TOP -->
+			<th:block th:replace="fragments/common/top :: top"></th:block>
+			
+			<!--begin::wrapper-->			
+			<div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+				<!-- SIDE -->
+				<th:block th:replace="fragments/common/side :: side"></th:block>
+				
+				<!-- CONTENT -->
+				<div class="app-main flex-column flex-row-fluid" id="kt_app_main" layout:fragment="content"></div>
+			
+				<!-- FOOTER -->
+				<th:block th:replace="fragments/common/footer :: footer"></th:block>
+			</div>
+			<!--end::wrapper-->
+		</div>
+	</div>
+	<!--end::Root -->
+	
+</body>
+<!--end::Body-->
+</html>

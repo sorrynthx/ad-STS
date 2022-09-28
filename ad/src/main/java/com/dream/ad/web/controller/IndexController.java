@@ -6,19 +6,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 	
-	@GetMapping("/")
-	public String index() {
-		return "html/index";
+	@GetMapping("/welcome")
+	public String welcome() {
+		return "contents/welcome";
 	}
 	
-	@GetMapping("/welcome/1")
-	public String welcome1() {
-		return "html/welcome1";
+	@GetMapping("/landing")
+	public String landing() {
+		return "contents/landing";
 	}
 	
-	@GetMapping("/main")
-	public String main() {
-		return "html/main";
+	@GetMapping("/seller")
+	public String seller() {
+		return "contents/seller";
 	}
 	
+	@GetMapping("/marketer")
+	public String marketer() {
+		return "contents/marketer";
+	}
 }

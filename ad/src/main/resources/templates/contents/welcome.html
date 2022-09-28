@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>광고 솔루션</title>
+	<meta charset="utf-8" />
+	<meta name="description"
+		content="Good admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
+	<meta name="keywords"
+		content="Good, bootstrap, bootstrap 5, admin themes, free admin themes, bootstrap admin, bootstrap dashboard, bootstrap dark mode" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Good - Bootstrap 5 HTML Admin Dashboard Template" />
+	<meta property="og:url"
+		content="https://themes.getbootstrap.com/product/good-bootstrap-5-admin-dashboard-template" />
+	<meta property="og:site_name" content="Keenthemes | Good" />
+	<link rel="canonical" href="https://preview.keenthemes.com/good" />
+	<link rel="shortcut icon" href="/assets/media/logos/favicon.ico" />
+	<!--begin::Fonts-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+	<!--end::Fonts-->
+	<link href="/assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css" />
+	<!--end::Page Vendor Stylesheets-->
+</head>
+<style>
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: "Helvetica Neue";
+		width: 100%;
+		height: 100%;
+	}
+
+	h2 {
+		font-size: 3rem;
+	}
+
+	.container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.left {
+		background-color: #f8f6f2;
+	}
+
+	.right {
+		background-color: #fcfcfb;
+	}
+
+	.right,
+	.left {
+		width: 50%;
+		text-align: center;
+		transition: 500ms all ease-in-out;
+		cursor: pointer;
+	}
+
+	.hover-left .left,
+	.hover-right .right {
+		width: 75%;
+	}
+
+	.hover-left .right,
+	.hover-right .left {
+		width: 25%;
+	}
+</style>
+
+<body>
+
+	<div class="container">
+		<div class="left" style="padding: 35vh 0; text-align: center;" onclick="go('marketing');">
+			<div class="wrap">
+				<h2>마케터</h2>
+				<p href="#">⬅️</p>
+			</div>
+		</div>
+		<div class="right" style="padding: 35vh 0; text-align: center;" onclick="go('seller');">
+			<div class="wrap">
+				<h2>셀러</h2>
+				<p href="#">➡️</p>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const LEFT = document.querySelector(".left");
+		const RIGHT = document.querySelector(".right");
+		const CONTAINER = document.querySelector(".container");
+
+		LEFT.addEventListener("mouseenter", () => {
+			CONTAINER.classList.add("hover-left");
+		});
+		LEFT.addEventListener("mouseleave", () => {
+			CONTAINER.classList.remove("hover-left");
+		});
+
+		RIGHT.addEventListener("mouseenter", () => {
+			CONTAINER.classList.add("hover-right");
+		});
+		RIGHT.addEventListener("mouseleave", () => {
+			CONTAINER.classList.remove("hover-right");
+		});
+		function go(type) {
+			if (type === 'seller') console.log(type);
+			else console.log(type);
+		}
+	</script>
+
+	<!--end::Javascript-->
+</body>
+
+</html>
